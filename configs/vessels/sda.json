@@ -1,0 +1,13 @@
+{
+  "vessel_type": "SDA",
+  "max_speed": 26.5,
+  "unit": "km/hr",
+  "beam": 24.0,
+  "hull_type": "slender",
+  "force_limit": 96634.5,
+  "max_ice_conc": 80,
+  "min_depth": 10,
+  "max_wave": 3,
+  "excluded_zones": ["exclusion_zone"],
+  "neighbour_splitting": true
+}

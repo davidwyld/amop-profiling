@@ -530,6 +530,7 @@
 </table>
 <p>* <em>Note: these all show the same mesh output.</em></p>
 <p><code>trim_datapoints</code> for abstract scalar datasets is the function within MeshiPhi that takes up most time during both the <code>split_to_depth</code> and <code>aggregate</code> stages.</p>
+<p>The bulk of the time is in the use of <code>xarray.dataset.sel</code>.</p>
 <p>This is mainly due to the number of calls to this function, ~17k in this GRF example, or ~145k times in the real data example below.</p>
 <p>Each call only takes 5E-6 seconds, but totals up to a large fraction of the overall runtime.</p>
 <p>Optimising the approach here should be the first target for speedups in mesh building.</p>

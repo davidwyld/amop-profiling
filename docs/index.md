@@ -24,6 +24,13 @@ Config: `configs/environment/grf_example.config.json`
 
 \* _Note: these all show the same mesh output._
 
+`trim_datapoints` for abstract scalar datasets is the function within MeshiPhi that takes up most time during both the `split_to_depth` and `aggregate` stages.
+
+This is mainly due to the number of calls to this function, ~17k in this GRF example, or ~145k times in the real data example below.
+
+Each call only takes 5E-6 seconds, but totals up to a large fraction of the overall runtime.
+
+Optimising the approach here should be the first target for speedups in mesh building.
 
 #### Real Production Data
 
@@ -34,6 +41,7 @@ Config: `configs/environment/amsr_southern.config.json`
 | MeshiPhi | Python | Total Time (s) | Profile | Mesh | Optimizations |
 | -------- | ------ | ---------- | ------- | ---- | ------------- |
 | 2.2.3 | 3.13 | 637 | <a href="profiles/build_mesh_amsr_southern_meshiphi2.2.3_python3.13.html" target="_blank">snakeviz</a> | <a href="meshplots/build_mesh_amsr_southern_meshiphi2.2.3_python3.13.html" target="_blank">geoplot</a> | None |
+
 
 ### Add Vehicle
 

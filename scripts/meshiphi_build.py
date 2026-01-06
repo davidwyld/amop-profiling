@@ -1,8 +1,8 @@
 import json
 from meshiphi.mesh_generation.mesh_builder import MeshBuilder
 
-config_filepath = "configs/environment/grf_example.config.json"
-mesh_filepath = "grf_example.mesh.json"
+config_filepath = "configs/environment/amsr_southern.config.json"
+mesh_filepath = "amsr_southern.mesh.json"
 
 with open(config_filepath, 'r') as f:
     config = json.load(f)

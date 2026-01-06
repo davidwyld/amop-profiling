@@ -5,11 +5,16 @@
 
 ## Results
 
+**Tip**: Sort by `cumtime` when viewing snakeviz profile visualisations. Click a function call (line in the table) to set that as the root call. E.g. for environmental mesh building, select `build_environmental_mesh`.
+
 ### Create Environmental Mesh
+
+#### GRF Example
 
 Code: `scripts/meshiphi_build.py`
 
 Config: `configs/environment/grf_example.config.json`
+
 
 | MeshiPhi | Python | Total Time (s) | Profile | Mesh | Optimizations |
 | -------- | ------ | ---------- | ------- | ---- | ------------- |
@@ -18,6 +23,17 @@ Config: `configs/environment/grf_example.config.json`
 | 2.2.3 | 3.14 | 168.0 | <a href="profiles/build_mesh_meshiphi2.2.3_python3.14.html" target="_blank">snakeviz</a> | <a href="meshplots/build_mesh_meshiphi2.2.3_python3.14.html" target="_blank">geoplot</a>* | None |
 
 \* _Note: these all show the same mesh output._
+
+
+#### Real Production Data
+
+Code: `scripts/meshiphi_build.py`
+
+Config: `configs/environment/amsr_southern.config.json`
+
+| MeshiPhi | Python | Total Time (s) | Profile | Mesh | Optimizations |
+| -------- | ------ | ---------- | ------- | ---- | ------------- |
+| 2.2.3 | 3.13 | 637 | <a href="profiles/build_mesh_amsr_southern_meshiphi2.2.3_python3.13.html" target="_blank">snakeviz</a> | <a href="meshplots/build_mesh_amsr_southern_meshiphi2.2.3_python3.13.html" target="_blank">geoplot</a> | None |
 
 ### Add Vehicle
 

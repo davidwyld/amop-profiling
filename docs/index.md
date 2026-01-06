@@ -26,6 +26,8 @@ Config: `configs/environment/grf_example.config.json`
 
 `trim_datapoints` for abstract scalar datasets is the function within MeshiPhi that takes up most time during both the `split_to_depth` and `aggregate` stages.
 
+The bulk of the time is in the use of `xarray.dataset.sel`.
+
 This is mainly due to the number of calls to this function, ~17k in this GRF example, or ~145k times in the real data example below.
 
 Each call only takes 5E-6 seconds, but totals up to a large fraction of the overall runtime.

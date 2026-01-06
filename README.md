@@ -15,3 +15,8 @@ To visualise with snakeviz:
 ```sh
 python -m snakeviz profiles/<output_filename>
 ```
+
+
+## Building the docs
+
+`pip install mkdocs mkdocs-material`

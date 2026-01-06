@@ -294,6 +294,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Create Environmental Mesh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grf-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GRF Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-production-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real Production Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -378,6 +406,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Create Environmental Mesh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grf-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GRF Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-production-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real Production Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -429,7 +485,9 @@
 
 <h1 id="profiling-polarroute-and-meshiphi">Profiling PolarRoute and MeshiPhi</h1>
 <h2 id="results">Results</h2>
+<p><strong>Tip</strong>: Sort by <code>cumtime</code> when viewing snakeviz profile visualisations. Click a function call (line in the table) to set that as the root call. E.g. for environmental mesh building, select <code>build_environmental_mesh</code>.</p>
 <h3 id="create-environmental-mesh">Create Environmental Mesh</h3>
+<h4 id="grf-example">GRF Example</h4>
 <p>Code: <code>scripts/meshiphi_build.py</code></p>
 <p>Config: <code>configs/environment/grf_example.config.json</code></p>
 <table>
@@ -471,6 +529,31 @@
 </tbody>
 </table>
 <p>* <em>Note: these all show the same mesh output.</em></p>
+<h4 id="real-production-data">Real Production Data</h4>
+<p>Code: <code>scripts/meshiphi_build.py</code></p>
+<p>Config: <code>configs/environment/amsr_southern.config.json</code></p>
+<table>
+<thead>
+<tr>
+<th>MeshiPhi</th>
+<th>Python</th>
+<th>Total Time (s)</th>
+<th>Profile</th>
+<th>Mesh</th>
+<th>Optimizations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.2.3</td>
+<td>3.13</td>
+<td>637</td>
+<td><a href="profiles/build_mesh_amsr_southern_meshiphi2.2.3_python3.13.html" target="_blank">snakeviz</a></td>
+<td><a href="meshplots/build_mesh_amsr_southern_meshiphi2.2.3_python3.13.html" target="_blank">geoplot</a></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
 <h3 id="add-vehicle">Add Vehicle</h3>
 <p>Code: <code>scripts/polarroute_add_vehicle.py</code></p>
 <p>Config: <code>configs/vessels/sda.json</code></p>

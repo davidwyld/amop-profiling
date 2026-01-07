@@ -23,8 +23,11 @@ Config: `configs/environment/grf_example.config.json`
 | 2.2.3 | 3.14 | 168.0 | <a href="profiles/build_mesh_meshiphi2.2.3_python3.14.html" target="_blank">snakeviz</a> | <a href="meshplots/build_mesh_meshiphi2.2.3_python3.14.html" target="_blank">geoplot</a>* | None |
 | [2.3.0](https://github.com/bas-amop/MeshiPhi/pull/105/) | 3.13 | 74.5 | <a href="profiles/build_mesh_meshiphi2.3.0_python3.13.html" target="_blank">snakeviz</a> |  | Integer-based `.isel()` ([PR](https://github.com/bas-amop/MeshiPhi/pull/97)) |
 | [2.3.0](https://github.com/bas-amop/MeshiPhi/pull/105/) | 3.14 | 55.8 | <a href="profiles/build_mesh_meshiphi2.3.0_python3.14.html" target="_blank">snakeviz</a> |  | Integer-based `.isel()` ([PR](https://github.com/bas-amop/MeshiPhi/pull/97)) |
+| [2.3.0](https://github.com/bas-amop/MeshiPhi/pull/105/) | 3.14 freethreaded** | 24.2 | <a href="profiles/build_mesh_meshiphi2.3.0_python3.14_noGIL.html" target="_blank">snakeviz</a> |  | Integer-based `.isel()` ([PR](https://github.com/bas-amop/MeshiPhi/pull/97)) & GIL off |
 
 \* _Note: these all show the same mesh output._
+
+\** GIL (global interpreter lock) turned off using `python-freethreading` build from conda-forge; with `PYTHON_GIL=0`. Note this raises a warning as pandas is not marked as being safe without the GIL.
 
 `trim_datapoints` for abstract scalar datasets is the function within MeshiPhi that takes up most time during both the `split_to_depth` and `aggregate` stages.
 

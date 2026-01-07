@@ -61,7 +61,8 @@ Config: `configs/vessels/sda.json`
 | PolarRoute | MeshiPhi | Python | Total Time (s) | Profile | Mesh | Optimizations |
 | ---------- | -------- | ------ | ---------- | ------- | ---- | ------------- |
 | 1.1.8 | 2.1.15 | 3.14 | 17.8 | <a href="profiles/add_vehicle_polarroute1.1.8_meshiphi2.1.15_python3.14.html" target="_blank">snakeviz</a> | <a href="meshplots/add_vehicle_polarroute1.1.8_meshiphi2.1.15_python3.14.html" target="_blank">geoplot</a> | None |
-
+| 1.1.8 | 2.3.0 | 3.14 | 8.4 | <a href="profiles/add_vehicle_polarroute1.1.8_meshiphi2.3.0_python3.14.html" target="_blank">snakeviz</a> |  | None |
+| 1.1.8 | 2.3.0 | 3.14 | 2.9 | <a href="profiles/add_vehicle_polarroute1.1.8_meshiphi2.3.0_optimise_get_cellbox_python3.14.html" target="_blank">snakeviz</a> |  | Fast list comprehension in `get_cellbox` [`MeshiPhi/dw/optimise_get_cellbox`](https://github.com/bas-amop/MeshiPhi/pull/new/dw/optimise_get_cellbox) |
 
 ### Optimise Route
 

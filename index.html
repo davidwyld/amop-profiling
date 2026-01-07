@@ -498,7 +498,7 @@
 <th><code>build_environmental_mesh</code> time/s</th>
 <th>Profile</th>
 <th>Mesh</th>
-<th>Optimizations</th>
+<th>Optimisations</th>
 </tr>
 </thead>
 <tbody>
@@ -571,7 +571,7 @@
 <th>Total Time (s)</th>
 <th>Profile</th>
 <th>Mesh</th>
-<th>Optimizations</th>
+<th>Optimisations</th>
 </tr>
 </thead>
 <tbody>
@@ -605,7 +605,7 @@
 <th>Total Time (s)</th>
 <th>Profile</th>
 <th>Mesh</th>
-<th>Optimizations</th>
+<th>Optimisations</th>
 </tr>
 </thead>
 <tbody>
@@ -639,7 +639,45 @@
 </tbody>
 </table>
 <h3 id="optimise-route">Optimise Route</h3>
-<p>TODO</p>
+<p>Code: <code>scripts/polarroute_optimise_route.py</code></p>
+<p>Config: <code>configs/traveltime.config.json</code></p>
+<p>Waypoints: <code>configs/waypoints_example.csv</code></p>
+<table>
+<thead>
+<tr>
+<th>PolarRoute</th>
+<th>MeshiPhi</th>
+<th>Python</th>
+<th>Compute Time (s)</th>
+<th>Smoothing Time (s)</th>
+<th>Profile</th>
+<th>Mesh/Route</th>
+<th>Optimisations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.1.8</td>
+<td>2.3.0</td>
+<td>3.14</td>
+<td>5.0</td>
+<td>111.6</td>
+<td><a href="profiles/optimise_route_polarroute1.1.8_meshiphi2.3.0_python3.14.html" target="_blank">snakeviz</a></td>
+<td><a href="meshplots/optimise_route_grf_example_unsmoothed.html" target="_blank">Unsmoothed</a> / <a href="meshplots/optimise_route_grf_example_smoothed2000.html" target="_blank">Smoothed (Max 2000)</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>1.1.8</td>
+<td>2.3.0</td>
+<td>3.14</td>
+<td>3.8</td>
+<td>7.2</td>
+<td><a href="profiles/optimise_route_polarroute1.1.8_reduce_smoothing_iter_meshiphi2.3.0_python3.14.html" target="_blank">snakeviz</a></td>
+<td><a href="meshplots/optimise_route_grf_example_smoothed20.html" target="_blank">Smoothed (Max 20)</a></td>
+<td>Reduce max smoothing iterations to 20</td>
+</tr>
+</tbody>
+</table>
 
 
 

@@ -542,9 +542,18 @@
 <td></td>
 <td>Integer-based <code>.isel()</code> (<a href="https://github.com/bas-amop/MeshiPhi/pull/97">PR</a>)</td>
 </tr>
+<tr>
+<td><a href="https://github.com/bas-amop/MeshiPhi/pull/105/">2.3.0</a></td>
+<td>3.14 freethreaded**</td>
+<td>24.2</td>
+<td><a href="profiles/build_mesh_meshiphi2.3.0_python3.14_noGIL.html" target="_blank">snakeviz</a></td>
+<td></td>
+<td>Integer-based <code>.isel()</code> (<a href="https://github.com/bas-amop/MeshiPhi/pull/97">PR</a>) &amp; GIL off</td>
+</tr>
 </tbody>
 </table>
 <p>* <em>Note: these all show the same mesh output.</em></p>
+<p>** GIL (global interpreter lock) turned off using <code>python-freethreading</code> build from conda-forge; with <code>PYTHON_GIL=0</code>. Note this raises a warning as pandas is not marked as being safe without the GIL.</p>
 <p><code>trim_datapoints</code> for abstract scalar datasets is the function within MeshiPhi that takes up most time during both the <code>split_to_depth</code> and <code>aggregate</code> stages.</p>
 <p>The bulk of the time is in the use of <code>xarray.dataset.sel</code>.</p>
 <p>This is mainly due to the number of calls to this function, ~17k in this GRF example, or ~145k times in the real data example below.</p>

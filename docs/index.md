@@ -16,11 +16,13 @@ Code: `scripts/meshiphi_build.py`
 Config: `configs/environment/grf_example.config.json`
 
 
-| MeshiPhi | Python | Total Time (s) | Profile | Mesh | Optimizations |
+| MeshiPhi | Python | `build_environmental_mesh` time/s | Profile | Mesh | Optimizations |
 | -------- | ------ | ---------- | ------- | ---- | ------------- |
 | 2.1.15 | 3.13 | 92.4 | <a href="profiles/build_mesh_meshiphi2.1.15_python3.13.html" target="_blank">snakeviz</a> | <a href="meshplots/build_mesh_meshiphi2.2.3_python3.14.html" target="_blank">geoplot</a>* | None |
 | 2.2.3 | 3.13 | 88.6 | <a href="profiles/build_mesh_meshiphi2.2.3_python3.13.html" target="_blank">snakeviz</a> | <a href="meshplots/build_mesh_meshiphi2.2.3_python3.14.html" target="_blank">geoplot</a>* | None |
 | 2.2.3 | 3.14 | 168.0 | <a href="profiles/build_mesh_meshiphi2.2.3_python3.14.html" target="_blank">snakeviz</a> | <a href="meshplots/build_mesh_meshiphi2.2.3_python3.14.html" target="_blank">geoplot</a>* | None |
+| [2.3.0](https://github.com/bas-amop/MeshiPhi/pull/105/) | 3.13 | 74.5 | <a href="profiles/build_mesh_meshiphi2.3.0_python3.13.html" target="_blank">snakeviz</a> |  | Integer-based `.isel()` ([PR](https://github.com/bas-amop/MeshiPhi/pull/97)) |
+| [2.3.0](https://github.com/bas-amop/MeshiPhi/pull/105/) | 3.14 | 55.8 | <a href="profiles/build_mesh_meshiphi2.3.0_python3.14.html" target="_blank">snakeviz</a> |  | Integer-based `.isel()` ([PR](https://github.com/bas-amop/MeshiPhi/pull/97)) |
 
 \* _Note: these all show the same mesh output._
 
@@ -32,7 +34,9 @@ This is mainly due to the number of calls to this function, ~17k in this GRF exa
 
 Each call only takes 5E-6 seconds, but totals up to a large fraction of the overall runtime.
 
-Optimising the approach here should be the first target for speedups in mesh building.
+~~Optimising the approach here should be the first target for speedups in mesh building.~~
+
+Thomas had already addressed this in ([PR #97](https://github.com/bas-amop/MeshiPhi/pull/97)), using integer-based `.isel` over `.sel`, which in addition to using python 3.14 results in a 40% speed up.
 
 #### Real Production Data
 

@@ -34,7 +34,7 @@ This is mainly due to the number of calls to this function, ~17k in this GRF exa
 
 Each call only takes 5E-6 seconds, but totals up to a large fraction of the overall runtime.
 
-~~Optimising the approach here should be the first target for speedups in mesh building.~~
+<s>Optimising the approach here should be the first target for speedups in mesh building.</s>
 
 Thomas had already addressed this in ([PR #97](https://github.com/bas-amop/MeshiPhi/pull/97)), using integer-based `.isel` over `.sel`, which in addition to using python 3.14 results in a 40% speed up.
 
@@ -47,7 +47,7 @@ Config: `configs/environment/amsr_southern.config.json`
 | MeshiPhi | Python | Total Time (s) | Profile | Mesh | Optimizations |
 | -------- | ------ | ---------- | ------- | ---- | ------------- |
 | 2.2.3 | 3.13 | 637 | <a href="profiles/build_mesh_amsr_southern_meshiphi2.2.3_python3.13.html" target="_blank">snakeviz</a> | <a href="meshplots/build_mesh_amsr_southern_meshiphi2.2.3_python3.13.html" target="_blank">geoplot</a> | None |
-
+| 2.3.0 | 3.14 | 403 | <a href="profiles/build_mesh_amsr_southern_meshiphi2.3.0_python3.14.html" target="_blank">snakeviz</a> | - | Integer-based `.isel()` ([PR](https://github.com/bas-amop/MeshiPhi/pull/97)) |
 
 ### Add Vehicle
 

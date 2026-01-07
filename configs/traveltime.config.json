@@ -1,0 +1,11 @@
+{
+    "objective_function": "traveltime",
+    "path_variables": [
+      "fuel",
+      "traveltime"
+    ],
+    "vector_names": ["uC","vC"],
+    "waypoint_splitting": false,
+    "smoothing_max_iterations": 20
+}
+  

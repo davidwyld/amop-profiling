@@ -16,7 +16,7 @@ Code: `scripts/meshiphi_build.py`
 Config: `configs/environment/grf_example.config.json`
 
 
-| MeshiPhi | Python | `build_environmental_mesh` time/s | Profile | Mesh | Optimizations |
+| MeshiPhi | Python | `build_environmental_mesh` time/s | Profile | Mesh | Optimisations |
 | -------- | ------ | ---------- | ------- | ---- | ------------- |
 | 2.1.15 | 3.13 | 92.4 | <a href="profiles/build_mesh_meshiphi2.1.15_python3.13.html" target="_blank">snakeviz</a> | <a href="meshplots/build_mesh_meshiphi2.2.3_python3.14.html" target="_blank">geoplot</a>* | None |
 | 2.2.3 | 3.13 | 88.6 | <a href="profiles/build_mesh_meshiphi2.2.3_python3.13.html" target="_blank">snakeviz</a> | <a href="meshplots/build_mesh_meshiphi2.2.3_python3.14.html" target="_blank">geoplot</a>* | None |
@@ -47,7 +47,7 @@ Code: `scripts/meshiphi_build.py`
 
 Config: `configs/environment/amsr_southern.config.json`
 
-| MeshiPhi | Python | Total Time (s) | Profile | Mesh | Optimizations |
+| MeshiPhi | Python | Total Time (s) | Profile | Mesh | Optimisations |
 | -------- | ------ | ---------- | ------- | ---- | ------------- |
 | 2.2.3 | 3.13 | 637 | <a href="profiles/build_mesh_amsr_southern_meshiphi2.2.3_python3.13.html" target="_blank">snakeviz</a> | <a href="meshplots/build_mesh_amsr_southern_meshiphi2.2.3_python3.13.html" target="_blank">geoplot</a> | None |
 | 2.3.0 | 3.14 | 403 | <a href="profiles/build_mesh_amsr_southern_meshiphi2.3.0_python3.14.html" target="_blank">snakeviz</a> | - | Integer-based `.isel()` ([PR](https://github.com/bas-amop/MeshiPhi/pull/97)) |
@@ -58,7 +58,7 @@ Code: `scripts/polarroute_add_vehicle.py`
 
 Config: `configs/vessels/sda.json`
 
-| PolarRoute | MeshiPhi | Python | Total Time (s) | Profile | Mesh | Optimizations |
+| PolarRoute | MeshiPhi | Python | Total Time (s) | Profile | Mesh | Optimisations |
 | ---------- | -------- | ------ | ---------- | ------- | ---- | ------------- |
 | 1.1.8 | 2.1.15 | 3.14 | 17.8 | <a href="profiles/add_vehicle_polarroute1.1.8_meshiphi2.1.15_python3.14.html" target="_blank">snakeviz</a> | <a href="meshplots/add_vehicle_polarroute1.1.8_meshiphi2.1.15_python3.14.html" target="_blank">geoplot</a> | None |
 | 1.1.8 | 2.3.0 | 3.14 | 8.4 | <a href="profiles/add_vehicle_polarroute1.1.8_meshiphi2.3.0_python3.14.html" target="_blank">snakeviz</a> |  | None |
@@ -66,4 +66,13 @@ Config: `configs/vessels/sda.json`
 
 ### Optimise Route
 
-TODO
+Code: `scripts/polarroute_optimise_route.py`
+
+Config: `configs/traveltime.config.json`
+
+Waypoints: `configs/waypoints_example.csv`
+
+| PolarRoute | MeshiPhi | Python | Compute Time (s) | Smoothing Time (s) | Profile | Mesh/Route | Optimisations |
+| ---------- | -------- | ------ | ---------- | ------- | ---- | ------ | ------------- |
+| 1.1.8 | 2.3.0 | 3.14 | 5.0 | 111.6 | <a href="profiles/optimise_route_polarroute1.1.8_meshiphi2.3.0_python3.14.html" target="_blank">snakeviz</a> | <a href="meshplots/optimise_route_grf_example_unsmoothed.html" target="_blank">Unsmoothed</a> / <a href="meshplots/optimise_route_grf_example_smoothed2000.html" target="_blank">Smoothed (Max 2000)</a> | None |
+| 1.1.8 | 2.3.0 | 3.14 | 3.8 | 7.2 | <a href="profiles/optimise_route_polarroute1.1.8_reduce_smoothing_iter_meshiphi2.3.0_python3.14.html" target="_blank">snakeviz</a> | <a href="meshplots/optimise_route_grf_example_smoothed20.html" target="_blank">Smoothed (Max 20)</a> | Reduce max smoothing iterations to 20 |

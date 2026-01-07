@@ -495,7 +495,7 @@
 <tr>
 <th>MeshiPhi</th>
 <th>Python</th>
-<th>Total Time (s)</th>
+<th><code>build_environmental_mesh</code> time/s</th>
 <th>Profile</th>
 <th>Mesh</th>
 <th>Optimizations</th>
@@ -526,6 +526,22 @@
 <td><a href="meshplots/build_mesh_meshiphi2.2.3_python3.14.html" target="_blank">geoplot</a>*</td>
 <td>None</td>
 </tr>
+<tr>
+<td><a href="https://github.com/bas-amop/MeshiPhi/pull/105/">2.3.0</a></td>
+<td>3.13</td>
+<td>74.5</td>
+<td><a href="profiles/build_mesh_meshiphi2.3.0_python3.13.html" target="_blank">snakeviz</a></td>
+<td></td>
+<td>Integer-based <code>.isel()</code> (<a href="https://github.com/bas-amop/MeshiPhi/pull/97">PR</a>)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/bas-amop/MeshiPhi/pull/105/">2.3.0</a></td>
+<td>3.14</td>
+<td>55.8</td>
+<td><a href="profiles/build_mesh_meshiphi2.3.0_python3.14.html" target="_blank">snakeviz</a></td>
+<td></td>
+<td>Integer-based <code>.isel()</code> (<a href="https://github.com/bas-amop/MeshiPhi/pull/97">PR</a>)</td>
+</tr>
 </tbody>
 </table>
 <p>* <em>Note: these all show the same mesh output.</em></p>
@@ -533,7 +549,8 @@
 <p>The bulk of the time is in the use of <code>xarray.dataset.sel</code>.</p>
 <p>This is mainly due to the number of calls to this function, ~17k in this GRF example, or ~145k times in the real data example below.</p>
 <p>Each call only takes 5E-6 seconds, but totals up to a large fraction of the overall runtime.</p>
-<p>Optimising the approach here should be the first target for speedups in mesh building.</p>
+<p>~~Optimising the approach here should be the first target for speedups in mesh building.~~</p>
+<p>Thomas had already addressed this in (<a href="https://github.com/bas-amop/MeshiPhi/pull/97">PR #97</a>), using integer-based <code>.isel</code> over <code>.sel</code>, which in addition to using python 3.14 results in a 40% speed up.</p>
 <h4 id="real-production-data">Real Production Data</h4>
 <p>Code: <code>scripts/meshiphi_build.py</code></p>
 <p>Config: <code>configs/environment/amsr_southern.config.json</code></p>
